@@ -1,5 +1,7 @@
 #!/bin/bash
-# check if CPU load greater than or less than, and ban or unban IPs at CF firewall
+# check if LA greater than or less than, and ban or unban IPs at CF firewall
+# LA trigger depends on cores quantity 
+# we can check nginx connections also
 
 ip="......"
 
