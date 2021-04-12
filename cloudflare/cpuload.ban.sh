@@ -1,6 +1,7 @@
 #!/bin/bash
+# check if CPU load greater than or less than, and ban or unban IPs at CF firewall
 
-ip="46.21.250.95"
+ip="......"
 
 cores=$(nproc)
 load=$(awk '{print $3}'< /proc/loadavg)
@@ -9,7 +10,7 @@ echo | awk -v c="${cores}" -v l="${load}" '{print "relative load is " l*100/c "%
 usage=$(echo | awk -v c="${cores}" -v l="${load}" '{print l*100/c}' | awk -F. '{print $1}')
 if [[ ${usage} -ge 1000 ]]; then
     echo "WARN - `uptime` - CPU load per 15 minutes is ${usage}% - trying to ban" >> /var/log/cpuload/cpuload.log
-    curl -s --user "api:key-815f................43" \
+    curl -s --user "api:key-8...................." \
     https://api.mailgun.net/v3/site.com/messages \
     -F from=".." \
     -F to=... \
