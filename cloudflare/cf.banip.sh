@@ -1,4 +1,5 @@
 #!/bin/bash
+# looking for 10 most active IP in last 50k log lines by http_x_forwarded_for header from CF and ban them at CF firewall
 
 TAIL=$(which tail)
 GREP=$(which grep)
